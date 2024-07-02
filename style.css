@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(./image/mountain-6253669_1920.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 80%;
+    height: 80vh;
+    max-width: 800px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.input-area {
+    display: flex;
+    align-items: center;
+    border: 2px solid skyblue;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #f9f9f9;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.input-area input:focus {
+    outline: none;
+}
+
+.input-area button {
+    padding: 10px;
+    background-color: skyblue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input-area button:hover {
+    background-color: rgb(87, 183, 221);
+}
+
+.task-tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.task-tabs .tablinks {
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    color: #555;
+    transition: color 0.3s ease;
+}
+
+.task-tabs .tablinks.active {
+    font-weight: bold;
+    color: #000;
+}
+
+.task-tabs button {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    color: #555;
+    transition: all 0.3s ease;
+}
+
+.task-tabs button:hover {
+    color: #333;
+}
+
+.task-tabs button.active {
+    font-weight: bold;
+    color: #000;
+}
+
+.task {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#underline {
+    height: 4px;
+    background-color: skyblue;
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+.task-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.task-actions button {
+    padding: 8px 16px;
+    background-color: #8a8989;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-actions button:hover {
+    background-color: #6f6f6f;
+    transform: translateY(-1px);
+}
+
+.task-actions button:first-child {
+    background-color: #4CAF50;
+}
+
+.task-actions button:first-child:hover {
+    background-color: #45a049;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>To-do List</h1>
+        <section class="input-area">
+
+            <input type="text" id="task-input" placeholder="할 일을 입력하세요">
+            <button id="add-btn">추가</button>
+        </section>
+
+        <section class="task-area">
+            <div class="task-tabs">
+                <button class="tablinks">전체</button>
+                <button class="tablinks">진행 중</button>
+                <button class="tablinks">완료</button>
+                <div id="underline"></div>
+
+            </div>
+
+            <div id="task-board">
+            </div>
+
+
+        </section>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
