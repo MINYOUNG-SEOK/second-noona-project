@@ -1,0 +1,264 @@
+/* Global */
+:root {
+    /* App Colors */
+    --color-primary: var(--color-black);
+    --color-primary-variant: var(--color-gray);
+    --color-accent: var(--color-yellow);
+    --color-accent-variant: var(--color-orange);
+    --color-text: var(--color-white);
+
+    /* Colors */
+    --color-white: #ffffff;
+    --color-black: #050a13;
+    --color-yellow: yellow;
+    --color-orange: #fd6413;
+    --color-gray: #1b1e26;
+
+    /* Size */
+    --size-max-width: 1200px;
+}
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'open Sans', sans-serif;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+button {
+    background-color: transparent;
+    outline: 0;
+    border: 0;
+}
+
+button:focus {
+    outline: 1px solid var(--color-accent);
+}
+
+/* Common */
+.section {
+    padding: 4rem;
+    text-align: center;
+}
+
+.max-container {
+    max-width: var(--size-max-width);
+    margin: auto;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+}
+
+.description {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+
+
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header__logo__img {
+    width: 36px;
+    height: 36px;
+}
+
+.header__logo__title {
+    font-size: 1.8rem;
+}
+
+.header__menu {
+    display: flex;
+    gap: 4px;
+}
+
+.header__menu__item {
+    padding: 8px 16px;
+}
+
+.header__menu__item:hover {
+    border-bottom: 1px solid var(--color-accent);
+}
+
+.header__menu__item.active {
+    border: 1px solid var(--color-accent);
+    border-radius: 4px;
+}
+
+/* Home */
+#home {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    padding: 5rem 1rem;
+    padding-top: 7rem;
+    text-align: center;
+}
+
+.home__avatar {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 3px solid var(--color-accent);
+    border-radius: 100%;
+}
+
+.home__title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.home__title--strong {
+    color: var(--color-accent);
+}
+
+.home__description {
+    font-size: 1.3rem;
+}
+
+.home__contact {
+    display: inline-block;
+    background-color: var(--color-accent);
+    padding: 0.5rem 1rem;
+    margin: 2rem;
+    font-weight: bold;
+    color: var(--color-black);
+    border-radius: 4px;
+}
+
+.home__contact:hover {
+    background-color: transparent;
+    color: var(--color-text);
+    outline: 2px solid var(--color-accent);
+}
+
+/* About */
+.majors {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 2.5rem 0;
+}
+
+.major {
+    width: 20rem;
+    background-color: var(--color-primary-variant);
+    padding: 2rem 1rem;
+    color: var(--color-text);
+    border-radius: 1rem;
+    cursor: default;
+    box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.38);
+}
+
+.major__icon {
+    font-size: 4rem;
+    margin: 1rem 0;
+    color: var(--color-accent);
+    transition: all 300ms ease;
+}
+
+.major__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.major:hover .major__icon {
+    transform: rotate(-15deg) scale(1.2);
+}
+
+.jobs {
+    text-align: start;
+}
+
+.job {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 1rem;
+}
+
+.job__name {
+    color: var(--color-primary);
+}
+
+.job__period {
+    color: var(--color-primary);
+    font-size: 0.8rem
+}
+
+/* Skills */
+#skills {
+    background-color: var(--color-primary-variant);
+    color: var(--color-text);
+}
+
+.skills {
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    margin: 2rem 3rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.38);
+}
+
+.skills__title {
+    color: var(--color-accent);
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+
+.skills__coding {
+    grid-row: span 2;
+    padding: 1rem;
+    background-color: var(--color-primary);
+}
+
+.skills__tools {
+padding: 1rem;
+}
+
+.skills__etc {
+    padding: 1rem;
+    background-color: var(--color-primary);
+    filter: brightness(150%);
+}

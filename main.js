@@ -1,54 +1,73 @@
-// 유저가 값을 입력한다
-// 버튼을 클릭하면 할 일이 추가된다
-// 삭제 버튼을 클릭하면 할 일이 삭제된다
-// 완료 버튼을 클릭하면 할 일이 끝나면서 밑줄이 간다
-// 진행중, 완료 탭을 누르면 언더바가 이동한다
-// 완료 탭은 완료 아이템만, 진행중 탭은 진행중인 아이템만
-// 전체탭을 누르면 다시 전체 아이템으로 돌아옴
-
-
-
-// 각 탭에 대한 클릭 이벤트 추가
-let tablinks = document.querySelectorAll('.tablinks');
-tablinks.forEach(tab => {
-    tab.addEventListener('click', function() {
-
-        tablinks.forEach(t => t.classList.remove('active'));
-
-        this.classList.add('active');
-        
-        const underline = document.getElementById('underline');
-        underline.style.width = `${this.offsetWidth}px`;
-        underline.style.left = `${this.offsetLeft}px`;
-    });
-});
-
-
 let taskInput = document.getElementById("task-input");
-let addBtn = document.getElementById("add-btn");
-let taskList = []
-addBtn.addEventListener("click", addTask)
+let addButton = document.getElementById("add-button");
+let taskList = [];
+
+addButton.addEventListener("click", addTask);
 
 function addTask() {
-    let taskContent = taskInput.value;
-    taskList.push(taskContent);
-    console.log(taskList);
-    render();
+  if (taskInput.value.trim() === "") {
+    return;
+  }
+
+  let task = {
+    id: randomIDGenerate(),
+    taskContent: taskInput.value,
+    isComplete: false,
+  };
+  taskList.push(task);
+  taskInput.value = "";
+  render();
 }
 
 function render() {
-    let resultHTML = ''
-    for(let i=0; i<taskList.length; i++){
-        resultHTML += `<div class="task">
-        <div>${taskList[i]}</div>
-        <div class="task-actions">
-            <button>완료</button>
-            <button>삭제</button>
-        </div>
-    </div>`
+  let resultHTML = "";
+  for (let i = 0; i < taskList.length; i++) {
+    const task = taskList[i];
+    const taskClass = task.isComplete ? "task done" : "task";
 
-    }
+    resultHTML += `
+            <div class="${taskClass}">
+                <div>${task.taskContent}</div>
+                <div class="task-actions">
+                    <button class="check-button" style="${
+                      task.isComplete
+                        ? "display: none;"
+                        : "display: inline-block;"
+                    }" onclick="toggleComplete('${task.id}')">
+                    <i class="fa-solid fa-check"></i>
+                    </button>
+                    <button class="undo-button" style="${
+                      task.isComplete
+                        ? "display: inline-block;"
+                        : "display: none;"
+                    }" onclick="toggleComplete('${task.id}')">
+                    <i class="fa-solid fa-rotate-right"></i>
+                    </button>
+                    <button onclick="deleteTask('${task.id}')">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </div>
+            </div>`;
+  }
 
-    document.getElementById("task-board").innerHTML = resultHTML
+  document.getElementById("task-board").innerHTML = resultHTML;
 }
 
+function toggleComplete(id) {
+  for (let i = 0; i < taskList.length; i++) {
+    if (taskList[i].id == id) {
+      taskList[i].isComplete = !taskList[i].isComplete;
+      break;
+    }
+  }
+  render();
+}
+
+function deleteTask(id) {
+  taskList = taskList.filter((task) => task.id !== id);
+  render();
+}
+
+function randomIDGenerate() {
+  return "_" + Math.random().toString(36).substr(2, 9);
+}

@@ -1,145 +1,139 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-image: url(./image/mountain-6253669_1920.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-image: url(./image/mountain-6253669_1920.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+
 .container {
-    background-color: rgba(255, 255, 255, 0.9);
-    width: 80%;
-    height: 80vh;
-    max-width: 800px;
-    padding: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 80%;
+  height: 100vh;
+  max-width: 800px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
 .input-area {
-    display: flex;
-    align-items: center;
-    border: 2px solid skyblue;
-    border-radius: 4px;
-    padding: 10px;
-    margin-top: 10px;
-    background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  border: 2px solid skyblue;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #f9f9f9;
 }
 
 .input-area input {
-    flex: 1;
-    padding: 8px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  flex: 1;
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .input-area input:focus {
-    outline: none;
+  outline: none;
 }
 
 .input-area button {
-    padding: 10px;
-    background-color: skyblue;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  padding: 10px;
+  background-color: skyblue;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
 .input-area button:hover {
-    background-color: rgb(87, 183, 221);
+  background-color: rgb(87, 183, 221);
+}
+
+.task-area {
+  border: 1px solid lightgray;
+  margin-top: 20px;
 }
 
 .task-tabs {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+  position: relative;
+  padding: 5px;
 }
 
-.task-tabs .tablinks {
-    padding: 10px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 1em;
-    color: #555;
-    transition: color 0.3s ease;
+.task-tabs div {
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
-.task-tabs .tablinks.active {
-    font-weight: bold;
-    color: #000;
-}
-
-.task-tabs button {
-    padding: 10px 20px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 1em;
-    color: #555;
-    transition: all 0.3s ease;
-}
-
-.task-tabs button:hover {
-    color: #333;
-}
-
-.task-tabs button.active {
-    font-weight: bold;
-    color: #000;
+#under-line {
+  height: 4px;
+  background-color: skyblue;
+  position: absolute;
+  width: 65px;
+  left: 0px;
+  top: 48px;
+  padding: 0px;
 }
 
 .task {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+  position: relative;
+  padding: 10px 0;
+  transition: background-color 0.3s ease;
+  width: calc(100% - 20px);
+  margin: 10px;
 }
 
-#underline {
-    height: 4px;
-    background-color: skyblue;
-    position: absolute;
-    transition: all 0.3s ease;
+.task-board {
+  padding: 12px;
+}
+
+.task.done {
+  background-color: lightgray;
+  text-decoration: line-through;
 }
 
 .task-actions {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
+  display: flex;
+  justify-content: flex-end;
+
 }
 
 .task-actions button {
-    padding: 8px 16px;
-    background-color: #8a8989;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 8px 16px;
+  background-color: #8a8989;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
 }
 
 .task-actions button:hover {
-    background-color: #6f6f6f;
-    transform: translateY(-1px);
+  background-color: #6f6f6f;
+  transform: translateY(-1px);
 }
 
 .task-actions button:first-child {
-    background-color: #4CAF50;
+  background-color: #4CAF50;
 }
 
 .task-actions button:first-child:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
