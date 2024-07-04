@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
+    <title>To-do List</title>
     <script src="https://kit.fontawesome.com/f14ada2966.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css" />
 </head>
@@ -14,19 +14,19 @@
     <div class="container">
         <h1>To-do List</h1>
         <section class="input-area">
-            <input type="text" id="task-input" placeholder="할 일을 입력하세요">
-            <button id="add-button">추가</button>
+            <input type="text" id="task-input" placeholder="Add a new task">
+            <button id="add-button">Save</button>
         </section>
         <section class="task-area">
             <div class="task-tabs">
                 <div id="under-line"></div>
-                <div>모두</div>
-                <div>진행중</div>
-                <div>끝남</div>
+                <div class="tab" data-filter="all">All</div>
+                <div class="tab" data-filter="progress">Pending</div>
+                <div class="tab" data-filter="complete">Completed</div>
             </div>
 
             <div id="task-board">
-
+                <!-- 할 일 목록 추가 -->
             </div>
         </section>
     </div>

@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-image: url(./image/mountain-6253669_1920.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -17,26 +17,33 @@ body {
   background-color: rgba(255, 255, 255, 0.9);
   width: 80%;
   height: 100vh;
-  max-width: 800px;
+  max-width: 600px;
   padding: 20px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .input-area {
   display: flex;
-  align-items: center;
-  border: 2px solid skyblue;
+  flex-direction: column;
+  align-items: stretch;
+  border: 2px solid black;
   border-radius: 4px;
   padding: 10px;
-  margin-top: 10px;
-  background-color: #f9f9f9;
+  background-color: #fafafa;
 }
 
 .input-area input {
-  flex: 1;
-  padding: 8px;
-  margin-right: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -47,7 +54,7 @@ body {
 
 .input-area button {
   padding: 10px;
-  background-color: skyblue;
+  background-color: black;
   color: white;
   border: none;
   border-radius: 4px;
@@ -55,12 +62,14 @@ body {
 }
 
 .input-area button:hover {
-  background-color: rgb(87, 183, 221);
+  cursor: pointer;
+  transform: translateY(-1px);
 }
 
 .task-area {
-  border: 1px solid lightgray;
+  flex: 1;
   margin-top: 20px;
+  overflow-y: auto;
 }
 
 .task-tabs {
@@ -71,35 +80,41 @@ body {
   padding: 5px;
 }
 
-.task-tabs div {
+.task-tabs .tab {
+  color: #8a8989;
   padding: 10px 20px;
   cursor: pointer;
+  padding: 10px;
+  flex: 1;
+  text-align: center;
+}
+
+.task-tabs .tab:hover {
+  color: black;
+}
+
+.task-tabs .tab.active {
+  color: black;
 }
 
 #under-line {
   height: 4px;
-  background-color: skyblue;
+  background-color: black;
   position: absolute;
   width: 65px;
   left: 0px;
   top: 48px;
   padding: 0px;
+  transition: left 0.3s ease, width 0.3s ease;
 }
 
 .task {
   display: flex;
   justify-content: space-between;
-  width: 100%;
   border-bottom: 1px solid lightgray;
   position: relative;
   padding: 10px 0;
   transition: background-color 0.3s ease;
-  width: calc(100% - 20px);
-  margin: 10px;
-}
-
-.task-board {
-  padding: 12px;
 }
 
 .task.done {
@@ -110,19 +125,17 @@ body {
 .task-actions {
   display: flex;
   justify-content: flex-end;
-
 }
 
 .task-actions button {
-  padding: 8px 16px;
+  padding: 8px 12px;
   background-color: #8a8989;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  white-space: nowrap;
+
 }
 
 .task-actions button:hover {
@@ -136,4 +149,8 @@ body {
 
 .task-actions button:first-child:hover {
   background-color: #45a049;
+}
+
+.task-actions button+button {
+  margin-left: 5px;
 }
